@@ -22,8 +22,8 @@ modules:
     #     # PhpBrowser:
     #     #     url: 'http://localhost:8080'
     #    WebDriver:
-           url: 'http://localhost'
-        #    url: http://127.0.0.1:8080/
+        #    url: 'http://localhost'
+           url: http://127.0.0.1:8080/
            browser: firefox
            restart: true
 #
@@ -32,7 +32,7 @@ modules:
 #     enabled:
 #         - WebDriver:
 #             browser: firefox
-#         - Yii2:
-#             part: orm
-#             entryScript: index-test.php
-#             cleanup: false
+        - Yii2:
+            part: orm
+            # entryScript: index-test.php
+            cleanup: false

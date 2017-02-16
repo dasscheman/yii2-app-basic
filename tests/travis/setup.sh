@@ -1,5 +1,5 @@
 serverUrl='http://127.0.0.1:4444'
-serverFile=../../selenium-server-standalone-3.0.1.jar
+serverFile=selenium-server-standalone-3.0.1.jar
 
 phpVersion=`php -v`
 

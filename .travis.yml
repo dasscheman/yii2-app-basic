@@ -32,7 +32,7 @@ before_script:
   - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-3.0.1.jar &
   # - java -jar -Dwebdriver.chrome.driver=chromedriver selenium-server-standalone-3.0.1.jar &
   - sleep 20
-  # - tests/bin/yii serve &
+  - tests/bin/yii serve &
   - sleep 3
 
 script:

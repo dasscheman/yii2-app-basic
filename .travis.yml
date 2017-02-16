@@ -7,11 +7,8 @@ php:
   - 7.0
 #  - hhvm
 
-addons:
-  firefox: "40.0"
-
 # faster builds on new travis setup not using sudo
-sudo: required
+sudo: false
 
 # cache vendor dirs
 cache:
@@ -25,11 +22,12 @@ install:
 # setup application:
   - |
     sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" config/web.php
-  - chmod +x ./tests/travis/setup.sh
-  - ./tests/travis/setup.sh
+  # - chmod +x ./tests/travis/setup.sh
+  # - ./tests/travis/setup.sh
 #  - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-3.0.1.jar &
 #  - tests/bin/yii serve &
+
 script:
-#  - |
-#    php -S localhost:8080 -t web > /dev/null 2>&1 &
-  - vendor/bin/codecept run
+  - |
+    php -S localhost:8080 -t web > /dev/null 2>&1 &
+    vendor/bin/codecept run

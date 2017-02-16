@@ -25,6 +25,6 @@ install:
   - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-3.0.1.jar &
   - tests/bin/yii serve &
 script:
-  - |
-    php -S localhost:8080 -t web > /dev/null 2>&1 &
-    vendor/bin/codecept run
+#  - |
+#    php -S localhost:8080 -t web > /dev/null 2>&1 &
+  - vendor/bin/codecept run

@@ -36,8 +36,10 @@ before_script:
   # - rackup  # start a Web serve
   # - sudo xvfb-run java -jar $serverFile > /tmp/selenium.log &
 
-  - java -jar selenium-server-standalone-3.0.1.jar > /dev/null &
-  #- java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-3.0.1.jar &
+  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.31.0.jar
+  - java -jar selenium-server-standalone-2.31.0.jar > /dev/null &
+  # - java -jar selenium-server-standalone-3.0.1.jar > /dev/null &
+  # - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-3.0.1.jar > /dev/null &
   # - java -jar -Dwebdriver.chrome.driver=chromedriver selenium-server-standalone-3.0.1.jar &
   - sleep 20
   - tests/bin/yii serve &

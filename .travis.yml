@@ -5,8 +5,8 @@ php:
   - 7.0
 #  - hhvm
 addons:
-  firefox: "47.0"
-  
+  firefox: "46.0"
+
 # faster builds on new travis setup not using sudo
 sudo: false
 

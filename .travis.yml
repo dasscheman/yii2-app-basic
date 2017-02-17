@@ -5,7 +5,7 @@ php:
   - 7.0
 #  - hhvm
 addons:
-  firefox: "46.0"
+  firefox: "45.0"
 
 # faster builds on new travis setup not using sudo
 sudo: false
@@ -29,13 +29,10 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
 
-  # - rackup  # start a Web serve
-  # - sudo xvfb-run java -jar $serverFile > /tmp/selenium.log &
-
   - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
-  # - java -jar selenium-server-standalone-2.53.1.jar > /dev/null &
+  - java -jar selenium-server-standalone-2.53.1.jar > /dev/null &
   # - java -jar selenium-server-standalone-3.0.1.jar > /dev/null &
-  - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-2.53.1.jar > /dev/null &
+  # - java -jar -Dwebdriver.gecko.driver=geckodriver selenium-server-standalone-2.53.1.jar > /dev/null &
   # - java -jar -Dwebdriver.chrome.driver=chromedriver selenium-server-standalone-3.0.1.jar &
   - sleep 20
   - tests/bin/yii serve &
